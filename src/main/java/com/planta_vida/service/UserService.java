@@ -1,0 +1,21 @@
+package com.planta_vida.service;
+
+import com.planta_vida.pojo.User;
+import org.springframework.http.ResponseEntity;
+
+import java.util.List;
+import java.util.Map;
+
+public interface UserService {
+
+    ResponseEntity<String> signUp(Map<String,String> requestMap);
+
+    ResponseEntity<String> login(Map<String,String> requestMap);
+
+    List<User> getAllUsers();
+    ResponseEntity<String> updateUser(Map<String, String> requestMap);
+    ResponseEntity<String> deleteUser(int id);
+
+
+    Object getRolesByUserId(Long userId);
+}
