@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -29,6 +30,7 @@ public class CustomerDetailsService implements UserDetailsService {
     private User userDetail;
 
     @Override
+    @Transactional(readOnly = true) // Envolver el método en una transacción
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         log.info("Dentro de loadUserByUsername. {}", username);
         userDetail = userDAO.findByEmail(username);
@@ -36,6 +38,7 @@ public class CustomerDetailsService implements UserDetailsService {
 
         if (!Objects.isNull(userDetail) && userDetail.getEmail() != null && !userDetail.getEmail().isEmpty()
                 && userDetail.getPassword() != null && !userDetail.getPassword().isEmpty()) {
+            // Asegúrate de que los roles estén cargados correctamente
             Collection<GrantedAuthority> authorities = userDetail.getRoles().stream()
                     .map(role -> new SimpleGrantedAuthority(role.getName()))
                     .collect(Collectors.toList());

@@ -1,10 +1,14 @@
 package com.planta_vida.pojo;
 
 import jakarta.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
 import java.util.Set;
 
 @Entity
-public class User {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,20 +17,19 @@ public class User {
     private String username;
     private String password;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "user_roles",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
     private Set<Role> roles;
+
     private String nombreCompleto;
     private String status;
     private String telefono;
     private String email;
     private String direccionCompleta;
-
-
 
     // Getters y Setters
 
@@ -62,41 +65,82 @@ public class User {
         this.roles = roles;
     }
 
-    public String getEmail() {
-           return "email@example.com";
+    public String getNombreCompleto() {
+        return nombreCompleto;
     }
 
-    // Setter para nombreCompleto
-    public void setNombreCompleto(String nombre) {
-        this.nombreCompleto = nombre;
+    public void setNombreCompleto(String nombreCompleto) {
+        this.nombreCompleto = nombreCompleto;
     }
 
-    // Getter para status
     public String getStatus() {
-        return this.status;
+        return status;
     }
 
-    // Setter para telefono
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
-    }
-
-    // Setter para email
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    // Setter para direccionCompleta
-    public void setDireccionCompleta(String direccion) {
-        this.direccionCompleta = direccion;
-    }
-
-    // Setter para status
     public void setStatus(String status) {
         this.status = status;
     }
 
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getDireccionCompleta() {
+        return direccionCompleta;
+    }
+
+    public void setDireccionCompleta(String direccionCompleta) {
+        this.direccionCompleta = direccionCompleta;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return roles.stream()
+                .map(role -> new org.springframework.security.core.authority.SimpleGrantedAuthority(role.getName()))
+                .toList();
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true; // Modificar según necesidad
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true; // Modificar según necesidad
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true; // Modificar según necesidad
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true; // Modificar según necesidad
+    }
+
+
     public void setName(String name) {
+    }
+
+    public boolean isPresent() {
+        return false;
+    }
+
+    public void setRole(String admin) {
 
     }
 }

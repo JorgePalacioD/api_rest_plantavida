@@ -15,6 +15,14 @@ public class Role {
     @ManyToMany(mappedBy = "roles")
     private Set<User> users;
 
+    // Constructor sin argumentos
+    public Role() {}
+
+    // Constructor con argumentos
+    public Role(String name) {
+        this.name = name;
+    }
+
     // Getters y Setters
 
     public Long getId() {
@@ -39,5 +47,9 @@ public class Role {
 
     public void setUsers(Set<User> users) {
         this.users = users;
+    }
+
+    public Role orElseThrow(Object o) {
+        return null;
     }
 }

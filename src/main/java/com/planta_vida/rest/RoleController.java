@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/roles")
 public class RoleController {
@@ -19,6 +21,20 @@ public class RoleController {
         try {
             Role savedRole = roleService.saveRole(role);
             return new ResponseEntity<>(savedRole, HttpStatus.CREATED);
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    // Método para listar todos los roles
+    @GetMapping
+    public ResponseEntity<List<Role>> getAllRoles() {
+        try {
+            List<Role> roles = roleService.getAllRoles();
+            if (roles.isEmpty()) {
+                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+            }
+            return new ResponseEntity<>(roles, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
