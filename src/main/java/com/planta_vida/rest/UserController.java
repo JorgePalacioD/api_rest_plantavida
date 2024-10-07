@@ -1,5 +1,8 @@
 package com.planta_vida.rest;
 
+import com.planta_vida.dao.UserDAO;
+import com.planta_vida.dto.LoginDTO;
+import com.planta_vida.service.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.planta_vida.dto.UserSignUpDTO;
@@ -27,6 +30,11 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    UserDAO userDAO;
+
+
 
     // Logger should be initialized correctly
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -66,16 +74,15 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody(required = true) Map<String, String> requestMap) {
-        try {
-            return userService.login(requestMap);
-        } catch (Exception exception) {
-            logger.error("Error during login: {}", exception.getMessage(), exception);
-            return Utils.getResponseEntity(Contants.SOMETHING_WENT_WRONG, HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+    public ResponseEntity<?> login(@RequestBody LoginDTO loginDTO) {
+      Optional<User> user = Optional.ofNullable(userDAO.findByEmail(loginDTO.getEmail()));
+
+      return ResponseEntity.ok(user);
+
+
     }
 
-    @PreAuthorize("hasRole('ADMIN')")
+   // @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/all")
     public ResponseEntity<List<User>> getAllUsers() {
         try {

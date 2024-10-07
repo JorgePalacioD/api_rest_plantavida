@@ -32,33 +32,33 @@ public class SecurityConfig {
     @Autowired
     private CorsConfigurationSource corsConfigurationSource;
 
-    // Usar BCryptPasswordEncoder para codificar contraseñas
+    // Bean para codificar contraseñas con BCrypt
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
 
-    // configuracion de la cadena de filtros de seguridad
-
+    // Configuración de la cadena de filtros de seguridad
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
-                .cors(cors -> cors.configurationSource(corsConfigurationSource)) // Configuracion de cors
-                .csrf(csrf -> csrf.disable())
+                .cors(cors -> cors.configurationSource(corsConfigurationSource)) // Configuración de CORS
+                .csrf(csrf -> csrf.disable()) // Deshabilitar CSRF ya que es una API sin estado
                 .authorizeHttpRequests(requests -> requests
-                        .requestMatchers("/user/signup", "/user/login").permitAll() // Rutas públicas
-                        .requestMatchers("/admin/signup").permitAll()
+                        .requestMatchers("/user/signup", "/user/login").permitAll() // Rutas públicas para signup y login
+                        .requestMatchers("/admin/signup").permitAll() // Ruta pública para el signup de admin
                         .requestMatchers("/admin/**").hasRole("ADMIN") // Solo ADMIN puede acceder a rutas bajo /admin
                         .requestMatchers("/user/**").hasAnyRole("USER", "ADMIN") // Usuarios y ADMIN pueden acceder a rutas bajo /user
                         .requestMatchers(HttpMethod.POST, "/roles").permitAll() // Ruta pública para crear roles
                         .anyRequest().authenticated()) // Todas las demás rutas requieren autenticación
                 .exceptionHandling(exceptionHandling -> exceptionHandling
-                        .accessDeniedHandler(accessDeniedHandler()))
+                        .accessDeniedHandler(accessDeniedHandler())) // Manejo personalizado de acceso denegado
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)) // Sin estado
-                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class); // Añadir el filtro JWT antes del filtro de autenticación por nombre de usuario y contraseña
+                .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class); // Añadir el filtro JWT
 
         return httpSecurity.build();
     }
+
     // Manejo de accesos denegados personalizados
     @Bean
     public AccessDeniedHandler accessDeniedHandler() {
@@ -67,7 +67,8 @@ public class SecurityConfig {
             response.getWriter().write("{\"message\": \"Acceso denegado\"}");
         };
     }
-    // Configuracion del AuthenticationManager
+
+    // Configuración del AuthenticationManager
     @Bean
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
             throws Exception {

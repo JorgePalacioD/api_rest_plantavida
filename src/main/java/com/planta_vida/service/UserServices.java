@@ -4,10 +4,10 @@ import com.planta_vida.pojo.Role;
 import com.planta_vida.pojo.User;
 import com.planta_vida.Repository.RoleRepository;
 import com.planta_vida.Repository.UserRepository;
+import com.planta_vida.security.CustomerDetailsService;
 import com.planta_vida.security.jwt.JwtUtil;
 import com.planta_vida.util.Utils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.neo4j.Neo4jProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -41,6 +41,9 @@ public class UserServices {
     @Autowired
     private JwtUtil jwtUtil; // Inyectar JwtUtil para generar tokens JWT
 
+    @Autowired
+    private CustomerDetailsService customerDetailsService; //
+
     // Método para el login de usuarios
     public ResponseEntity<?> login(Map<String, String> requestMap) {
         try {
@@ -54,7 +57,7 @@ public class UserServices {
             }
 
             // Buscar el usuario en la base de datos por su email
-            Optional<User> userOptional = Optional.ofNullable(userRepository.findByEmail(email));
+            Optional<User> userOptional = userRepository.findByEmail(email);
             if (userOptional.isEmpty()) {
                 return new ResponseEntity<>("Usuario no encontrado", HttpStatus.UNAUTHORIZED);
             }
@@ -81,6 +84,7 @@ public class UserServices {
 
         } catch (AuthenticationException e) {
             // Devolver una respuesta de error si la autenticación falla
+            e.printStackTrace();
             return new ResponseEntity<>("Credenciales incorrectas", HttpStatus.UNAUTHORIZED);
         } catch (Exception e) {
             // Manejo de otros errores
@@ -106,7 +110,9 @@ public class UserServices {
             User user = new User();
             user.setUsername(username);
             user.setEmail(email);
-            user.setPassword(passwordEncoder.encode(password)); // Codificar la contraseña
+            // Codificar la contraseña antes de asignarla al usuario
+            String encodedPassword = passwordEncoder.encode(password);
+            user.setPassword(encodedPassword);
 
             // Crear un HashSet y añadir el rol USER
             Set<Role> roles = new HashSet<>();
@@ -145,7 +151,7 @@ public class UserServices {
     }
 
     // Obtener un usuario por email
-    public Optional<User> getUserByEmail(String email) {
+    public Optional<Optional<User>> getUserByEmail(String email) {
         return Optional.ofNullable(userRepository.findByEmail(email));
     }
 
