@@ -1,5 +1,6 @@
 package com.planta_vida.service.impl;
 
+import com.planta_vida.pojo.User;
 import com.planta_vida.security.jwt.JwtUtil;
 import com.planta_vida.service.AuthProvider;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,7 +35,8 @@ public class AuthProviderImpl implements AuthProvider {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(email, password));
 
             final UserDetails userDetails = userDetailsService.loadUserByUsername(email);
-            final String jwt = jwtUtil.generateToken(userDetails.getUsername());
+            User user = new User();
+            final String jwt = jwtUtil.generateToken(userDetails.getUsername(), user.getRoles());
 
             return ResponseEntity.ok(jwt);
         } catch (Exception e) {

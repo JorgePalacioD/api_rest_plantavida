@@ -2,8 +2,9 @@ package com.planta_vida.dto;
 
 public class LoginDTO {
     private String email;
-    private String contraseña;
+    private String password;
 
+    // Getters and Setters
     public String getEmail() {
         return email;
     }
@@ -12,12 +13,11 @@ public class LoginDTO {
         this.email = email;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setPassword(String password) {
+        this.password = password;
     }
-
 }

@@ -56,38 +56,28 @@ public class JwtFilter extends OncePerRequestFilter {
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // Enviar 401 si hay un error con el JWT
                 return;
             }
-        } else {
-            logger.warn("Authorization header is missing or doesn't start with Bearer");
-            chain.doFilter(request, response);
-            return;
-        }
+        }  else {
+        logger.warn("Authorization header is missing or doesn't start with Bearer");
+        response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+        return;
+    }
 
         // Validar el token si el username es válido y no hay autenticación existente
 
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 
-            try {
-                if (jwtUtil.validateToken(jwt, userDetails)) {
-                    UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
-                            userDetails, null, userDetails.getAuthorities());
-
-                    authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
-
-                    // Establecer el contexto de seguridad con el usuario autenticado
-                    SecurityContextHolder.getContext().setAuthentication(authenticationToken);
-                } else {
-                    logger.warn("JWT Token is invalid");
-                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // Responder con 401 si el token no es válido
-                    return;
-                }
-            } catch (Exception e) {
-                logger.error("JWT Token validation failed: {}", e.getMessage());
-                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED); // Responder con 401 si la validación falla
+            if (jwtUtil.validateToken(jwt, userDetails)) {
+                UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
+                        userDetails, null, userDetails.getAuthorities());
+                authenticationToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
+                SecurityContextHolder.getContext().setAuthentication(authenticationToken);
+            } else {
+                logger.warn("JWT Token is invalid");
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
                 return;
             }
         }
-        // Continuar con el resto de los filtros si todo es válido
         chain.doFilter(request, response);
     }
 }

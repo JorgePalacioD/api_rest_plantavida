@@ -2,7 +2,9 @@ package com.planta_vida.rest;
 
 import com.planta_vida.dao.UserDAO;
 import com.planta_vida.dto.LoginDTO;
+import com.planta_vida.security.jwt.JwtUtil;
 import com.planta_vida.service.UserRepository;
+import org.apache.el.lang.ELArithmetic;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.planta_vida.dto.UserSignUpDTO;
@@ -16,6 +18,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -36,8 +39,12 @@ public class UserController {
 
 
 
+
+
     // Logger should be initialized correctly
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
+    private final ELArithmetic.BigDecimalDelegate passwordEncoder = new ELArithmetic.BigDecimalDelegate();
+    private final JwtUtil jwtUtil = new JwtUtil();
 
     @PostMapping("/signup")
     public ResponseEntity<?> registrarUsuario(@Validated @RequestBody UserSignUpDTO userSignUpDTO, BindingResult bindingResult) {
@@ -74,15 +81,13 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> login(@RequestBody LoginDTO loginDTO) {
-      Optional<User> user = Optional.ofNullable(userDAO.findByEmail(loginDTO.getEmail()));
-
-      return ResponseEntity.ok(user);
-
-
+    public ResponseEntity<?> login(@RequestBody Map<String, String> requestMap) {
+        return userService.login(requestMap);
     }
 
-   // @PreAuthorize("hasRole('ADMIN')")
+
+
+    // @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/all")
     public ResponseEntity<List<User>> getAllUsers() {
         try {
@@ -149,4 +154,6 @@ public class UserController {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+
 }

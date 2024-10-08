@@ -19,6 +19,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -48,6 +49,8 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private RoleRepository roleRepository;  // Repositorio para la entidad Role
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
 
     @Override
@@ -56,11 +59,27 @@ public class UserServiceImpl implements UserService {
         log.info("Sign Up User {}", userSignUpDTO);
         Map<String, String> response = new HashMap<>();
         try {
+            // validar que los datos de registro sean correctos//
             if (validateSignUp(userSignUpDTO)) {
+
+                // Verifica si el usuario ya existe//
                 User user = userDAO.findByEmail(userSignUpDTO.getEmail());
+
                 if (Objects.isNull(user)) {
+
+                    // crear un nuevo usuario a partir del DTO //
                     User newUser = userDAO.save(getUserFromDTO(userSignUpDTO));
-                    String token = jwtUtil.generateToken(newUser.getEmail());
+
+                    // ** Encriptar la contraseña antes de guardar el usuario** //
+                    newUser.setPassword(passwordEncoder.encode(newUser.getPassword()));
+
+                    // Guardar el nuevo usuario en la bvase de datos//
+                    newUser = userDAO.save(newUser);
+
+                    // Genera  token JWT
+                    String token = jwtUtil.generateToken(newUser.getEmail(), newUser.getRoles());
+
+                    // Respuestas exitosa
                     response.put("message", "Usuario registrado con éxito!");
                     response.put("token", token);
                     result = new ResponseEntity<>(response, HttpStatus.CREATED);
@@ -74,7 +93,7 @@ public class UserServiceImpl implements UserService {
             }
         } catch (Exception exception) {
             log.error("Error en signUp: {}", exception.getMessage());
-            response.put("message", "Algo salió mal");
+            response.put("message", "Algo salió mallllllll");
             result = new ResponseEntity<>(response, HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return result;
@@ -85,28 +104,34 @@ public class UserServiceImpl implements UserService {
         return null;
     }
 
+
     @Override
     public ResponseEntity<Map<String, String>> login(Map<String, String> requestMap) {
         Map<String, String> response = new HashMap<>();
         try {
-            // Validamos las credenciales
-            authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(requestMap.get("email"), requestMap.get("password"))
-            );
+            // Buscar el usuario por su email
+            User user = userDAO.findByEmail(requestMap.get("email"));
 
-            // Si la autenticación es exitosa, generamos el token
-            final User user = userDAO.findByEmail(requestMap.get("email"));
             if (user != null) {
-                String token = jwtUtil.generateToken(user.getEmail());
-                response.put("message", "Inicio de sesión exitoso");
-                response.put("token", token);
-                return new ResponseEntity<>(response, HttpStatus.OK);
+                // Verificar que la contraseña ingresada coincide con la encriptada
+                if (passwordEncoder.matches(requestMap.get("password"), user.getPassword())) {
+                    // Si la autenticación es exitosa, generar el token JWT
+                    String token = jwtUtil.generateToken(user.getEmail(), user.getRoles());
+                    response.put("message", "Inicio de sesión exitoso");
+                    response.put("token", token);
+                    return new ResponseEntity<>(response, HttpStatus.OK);
+                } else {
+                    System.out.println("estoy aqui--2");
+                    response.put("message", "Credenciales incorrectas-///");
+                    return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
+                }
             } else {
                 response.put("message", "Usuario no encontrado");
                 return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
             }
         } catch (AuthenticationException e) {
-            response.put("message", "Credenciales incorrectas");
+            System.out.println("estoy aqui--3");
+            response.put("message", "Credenciales incorrectas-****");
             return new ResponseEntity<>(response, HttpStatus.UNAUTHORIZED);
         } catch (Exception exception) {
             log.error("Error en login: {}", exception.getMessage());

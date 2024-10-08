@@ -1,5 +1,7 @@
 package com.planta_vida.service;
 
+import com.planta_vida.dao.UserDAO;
+import com.planta_vida.dto.LoginDTO;
 import com.planta_vida.pojo.Role;
 import com.planta_vida.pojo.User;
 import com.planta_vida.Repository.RoleRepository;
@@ -17,6 +19,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -28,68 +31,62 @@ import java.util.Set;
 public class UserServices {
 
     @Autowired
+    private UserDAO userDAO;
+    @Autowired
     private UserRepository userRepository;
-
     @Autowired
     private RoleRepository roleRepository;
-
     @Autowired
-    private PasswordEncoder passwordEncoder; // Para codificar contraseñas
-
-    private AuthenticationManager authenticationManager;
-
+    private PasswordEncoder passwordEncoder;// Para codificar contraseñas
+    @Autowired
+    private AuthenticationManager authenticationManager;// Inyectar correctamente el AuthenticationManager
     @Autowired
     private JwtUtil jwtUtil; // Inyectar JwtUtil para generar tokens JWT
-
     @Autowired
-    private CustomerDetailsService customerDetailsService; //
+    private CustomerDetailsService customerDetailsService; //Servicio de detalles del usuario
 
     // Método para el login de usuarios
-    public ResponseEntity<?> login(Map<String, String> requestMap) {
+    public ResponseEntity<?> login(@RequestBody Map<String, String> requestMap) {
         try {
-            // Extrae las credenciales del requestMap
-            String email = requestMap.get("email");
-            String password = requestMap.get("password");
 
-            // Verifica que las credenciales no sean nulas o vacías
-            if (email == null || password == null) {
-                return new ResponseEntity<>("Falta el correo electrónico o la contraseña", HttpStatus.BAD_REQUEST);
+            var email = requestMap.get("email");
+            var password = requestMap.get("password");
+
+            // Validar que el email no sea nulo o vacío
+            if (email == null || email.isEmpty()) {
+                System.out.println("El email es nulo o está vacío");
+                return new ResponseEntity<>("El email no puede estar vacío", HttpStatus.BAD_REQUEST);
             }
 
-            // Buscar el usuario en la base de datos por su email
-            Optional<User> userOptional = userRepository.findByEmail(email);
+            // Buscar el usuario por su email
+            Optional<User> userOptional = Optional.ofNullable(userDAO.findByEmail(email));
+
             if (userOptional.isEmpty()) {
+                System.out.println("Usuario no encontrado");
                 return new ResponseEntity<>("Usuario no encontrado", HttpStatus.UNAUTHORIZED);
             }
 
             User user = userOptional.get();
 
-            // Comparar la contraseña ingresada con la contraseña codificada almacenada
+            // Mostrar las contraseñas para depuración
+            System.out.println("Contraseña ingresada: " + password);
+            System.out.println("Contraseña en base de datos (encriptada): " + user.getPassword());
+
+            // Verificar la contraseña ingresada con la codificada almacenada
             if (!passwordEncoder.matches(password, user.getPassword())) {
-                return new ResponseEntity<>("Credenciales incorrectas", HttpStatus.UNAUTHORIZED);
+                System.out.println("Contraseña incorrecta++++++");
+                return new ResponseEntity<>("Credenciales incorrectas¿¿¿¿¿¿¿", HttpStatus.UNAUTHORIZED);
             }
 
-            // Autenticar al usuario utilizando el AuthenticationManager
-            Authentication authentication = authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(email, password));
+            // Generar JWT si la autenticación es exitosa
+            String token = jwtUtil.generateToken(user.getEmail(), user.getRoles());
 
-            // Si la autenticación es exitosa, configurar el contexto de seguridad
-            SecurityContextHolder.getContext().setAuthentication(authentication);
-
-            // Generar el JWT para el usuario autenticado
-            String token = jwtUtil.generateToken(user.getUsername());
-
-            // Retornar el token como respuesta
+            // Retornar el token JWT en la respuesta
             return ResponseEntity.ok(Collections.singletonMap("token", token));
 
-        } catch (AuthenticationException e) {
-            // Devolver una respuesta de error si la autenticación falla
-            e.printStackTrace();
-            return new ResponseEntity<>("Credenciales incorrectas", HttpStatus.UNAUTHORIZED);
         } catch (Exception e) {
-            // Manejo de otros errores
             e.printStackTrace();
-            return new ResponseEntity<>("Algo salió mal", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>("Error interno", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
@@ -105,7 +102,6 @@ public class UserServices {
             if (userRepository.findByEmail(email).isPresent()) {
                 return new ResponseEntity<>("El usuario ya existe", HttpStatus.BAD_REQUEST);
             }
-
             // Crear el nuevo usuario
             User user = new User();
             user.setUsername(username);
@@ -115,21 +111,29 @@ public class UserServices {
             user.setPassword(encodedPassword);
 
             // Crear un HashSet y añadir el rol USER
+            Role userRole = roleRepository.findByName("ROLE_USER");
+            if (userRole == null) {
+                return new ResponseEntity<>("Rol USER no encomtrado", HttpStatus.BAD_REQUEST);
+            }
             Set<Role> roles = new HashSet<>();
-            Role userRole = roleRepository.findByName("USER"); // Asignar rol de usuario
             roles.add(userRole);
-
-            // Asignar el conjunto de roles al usuario
             user.setRoles(roles);
 
             // Guardar el usuario en la base de datos
-            userRepository.save(user);
-            return new ResponseEntity<>("Usuario registrado exitosamente", HttpStatus.OK);
+            User savedUser = userRepository.save(user);
+            if (savedUser == null) {
+                return new ResponseEntity<>("Error al guardar el ususario", HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+            if (savedUser.getRoles() == null || savedUser.getRoles().isEmpty()) {
+                return new ResponseEntity<>("Error: el usuario no tiene roles asignados ", HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+            return new ResponseEntity<>("El usuario se ha guardado correctamente", HttpStatus.OK);
 
         } catch (Exception e) {
             e.printStackTrace();
             return Utils.getResponseEntity("Algo salió mal", HttpStatus.INTERNAL_SERVER_ERROR);
         }
+
     }
 
     // Crear un nuevo usuario con un rol específico
@@ -160,4 +164,6 @@ public class UserServices {
         Optional<User> user = userRepository.findById(userId);
         return user.map(User::getRoles).orElse(new HashSet<>());
     }
+
+
 }

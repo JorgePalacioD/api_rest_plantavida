@@ -25,6 +25,7 @@ public class JwtUtil {
     private String secretKeyBase64;
 
     private Key secretKey;
+    private Object role;
 
     // Inicializa la clave secreta a partir de la clave en Base64
     @PostConstruct
@@ -44,7 +45,7 @@ public class JwtUtil {
 
     // Extrae el nombre de usuario del token
     public String extractUsername(String token) {
-        return extractClaim(token, Claims::getSubject);
+                return extractClaim(token, Claims::getSubject);
     }
 
     // Extrae la fecha de expiración del token
@@ -83,17 +84,16 @@ public class JwtUtil {
     }
 
     // Genera un nuevo token JWT
-    public String generateToken(String username) {
+    public String generateToken(String username, Object role) {
         Map<String, Object> claims = new HashMap<>();
-        Object role = null;
-        claims.put("role", role);
+        claims.put("role", this.role);  // Ahora agregamos el rol al token
         return createToken(claims, username);
     }
 
+
     // Crea el token JWT con las reclamaciones y el sujeto
     private String createToken(Map<String, Object> claims, String subject) {
-        return Jwts.builder()
-                .setClaims(claims)
+        return Jwts.builder().claims(claims)
                 .setSubject(subject)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 10)) // 10 horas
