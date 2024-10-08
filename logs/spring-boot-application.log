@@ -1,0 +1,1894 @@
+2024-10-08T09:53:51.784-05:00  INFO 8020 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 8020 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T09:53:51.787-05:00 DEBUG 8020 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T09:53:51.787-05:00  INFO 8020 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T09:53:52.773-05:00  INFO 8020 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T09:53:52.840-05:00  INFO 8020 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
+2024-10-08T09:53:53.548-05:00  INFO 8020 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T09:53:53.561-05:00  INFO 8020 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T09:53:53.562-05:00  INFO 8020 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T09:53:53.610-05:00  INFO 8020 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T09:53:53.611-05:00  INFO 8020 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1781 ms
+2024-10-08T09:53:53.892-05:00  INFO 8020 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T09:53:53.961-05:00  INFO 8020 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T09:53:54.009-05:00  INFO 8020 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T09:53:54.334-05:00  INFO 8020 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T09:53:54.367-05:00  INFO 8020 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T09:53:54.511-05:00  INFO 8020 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6e355249
+2024-10-08T09:53:54.513-05:00  INFO 8020 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T09:53:54.558-05:00  WARN 8020 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T09:53:54.564-05:00  WARN 8020 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T09:53:55.558-05:00  INFO 8020 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T09:53:55.807-05:00  INFO 8020 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T09:53:56.033-05:00  INFO 8020 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T09:53:56.516-05:00 DEBUG 8020 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T09:53:56.655-05:00 DEBUG 8020 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T09:53:56.688-05:00 DEBUG 8020 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T09:53:56.772-05:00  INFO 8020 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T09:53:56.835-05:00 DEBUG 8020 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T09:53:56.839-05:00 DEBUG 8020 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T09:53:57.363-05:00  INFO 8020 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T09:53:57.964-05:00  INFO 8020 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T09:53:57.975-05:00  INFO 8020 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 6.659 seconds (process running for 7.58)
+2024-10-08T09:53:58.393-05:00  INFO 8020 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T09:53:58.394-05:00  INFO 8020 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T09:53:58.396-05:00  INFO 8020 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-08T09:54:03.710-05:00 DEBUG 8020 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T09:54:03.711-05:00 DEBUG 8020 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T09:54:09.662-05:00  INFO 8020 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T09:54:09.665-05:00  INFO 8020 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T09:54:09.673-05:00  INFO 8020 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T09:54:15.479-05:00  INFO 20352 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 20352 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T09:54:15.482-05:00 DEBUG 20352 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T09:54:15.483-05:00  INFO 20352 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T09:54:16.378-05:00  INFO 20352 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T09:54:16.440-05:00  INFO 20352 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2024-10-08T09:54:17.323-05:00  INFO 20352 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T09:54:17.361-05:00  INFO 20352 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T09:54:17.363-05:00  INFO 20352 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T09:54:17.480-05:00  INFO 20352 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T09:54:17.481-05:00  INFO 20352 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1951 ms
+2024-10-08T09:54:17.815-05:00  INFO 20352 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T09:54:17.859-05:00  INFO 20352 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T09:54:17.889-05:00  INFO 20352 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T09:54:18.160-05:00  INFO 20352 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T09:54:18.183-05:00  INFO 20352 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T09:54:18.298-05:00  INFO 20352 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@626df173
+2024-10-08T09:54:18.299-05:00  INFO 20352 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T09:54:18.330-05:00  WARN 20352 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T09:54:18.334-05:00  WARN 20352 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T09:54:19.134-05:00  INFO 20352 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T09:54:19.439-05:00  INFO 20352 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T09:54:19.703-05:00  INFO 20352 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T09:54:20.109-05:00 DEBUG 20352 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T09:54:20.229-05:00 DEBUG 20352 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T09:54:20.257-05:00 DEBUG 20352 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T09:54:20.321-05:00  INFO 20352 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T09:54:20.379-05:00 DEBUG 20352 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T09:54:20.387-05:00 DEBUG 20352 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T09:54:20.892-05:00  INFO 20352 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T09:54:21.381-05:00  INFO 20352 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T09:54:21.392-05:00  INFO 20352 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 6.299 seconds (process running for 6.87)
+2024-10-08T09:54:21.808-05:00  INFO 20352 --- [Planta_vida] [RMI TCP Connection(5)-10.199.1.14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T09:54:21.809-05:00  INFO 20352 --- [Planta_vida] [RMI TCP Connection(5)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T09:54:21.810-05:00  INFO 20352 --- [Planta_vida] [RMI TCP Connection(5)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-08T09:54:31.247-05:00 DEBUG 20352 --- [Planta_vida] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T09:54:31.250-05:00 DEBUG 20352 --- [Planta_vida] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T09:56:18.662-05:00  INFO 20352 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T09:56:18.663-05:00  INFO 20352 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T09:56:18.670-05:00  INFO 20352 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T09:56:22.967-05:00  INFO 22168 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 22168 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T09:56:22.969-05:00 DEBUG 22168 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T09:56:22.970-05:00  INFO 22168 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T09:56:23.848-05:00  INFO 22168 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T09:56:23.903-05:00  INFO 22168 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 4 JPA repository interfaces.
+2024-10-08T09:56:24.530-05:00  INFO 22168 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T09:56:24.540-05:00  INFO 22168 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T09:56:24.541-05:00  INFO 22168 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T09:56:24.587-05:00  INFO 22168 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T09:56:24.588-05:00  INFO 22168 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1566 ms
+2024-10-08T09:56:24.849-05:00  INFO 22168 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T09:56:24.894-05:00  INFO 22168 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T09:56:24.922-05:00  INFO 22168 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T09:56:25.191-05:00  INFO 22168 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T09:56:25.214-05:00  INFO 22168 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T09:56:25.330-05:00  INFO 22168 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a9051fd
+2024-10-08T09:56:25.332-05:00  INFO 22168 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T09:56:25.363-05:00  WARN 22168 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T09:56:25.368-05:00  WARN 22168 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T09:56:26.149-05:00  INFO 22168 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T09:56:26.357-05:00  INFO 22168 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T09:56:26.632-05:00  INFO 22168 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T09:56:27.047-05:00 DEBUG 22168 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T09:56:27.180-05:00 DEBUG 22168 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T09:56:27.208-05:00 DEBUG 22168 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T09:56:27.275-05:00  INFO 22168 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T09:56:27.328-05:00 DEBUG 22168 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T09:56:27.332-05:00 DEBUG 22168 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T09:56:27.822-05:00  INFO 22168 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T09:56:28.346-05:00  INFO 22168 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T09:56:28.357-05:00  INFO 22168 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 5.795 seconds (process running for 6.372)
+2024-10-08T09:56:28.888-05:00  INFO 22168 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T09:56:28.889-05:00  INFO 22168 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T09:56:28.891-05:00  INFO 22168 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-10-08T09:56:33.664-05:00 DEBUG 22168 --- [Planta_vida] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T09:56:33.667-05:00 DEBUG 22168 --- [Planta_vida] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T09:58:00.784-05:00  INFO 22168 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T09:58:00.788-05:00  INFO 22168 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T09:58:00.795-05:00  INFO 22168 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T09:58:04.805-05:00  INFO 15448 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 15448 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T09:58:04.807-05:00 DEBUG 15448 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T09:58:04.808-05:00  INFO 15448 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T09:58:06.016-05:00  INFO 15448 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T09:58:06.075-05:00  INFO 15448 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 4 JPA repository interfaces.
+2024-10-08T09:58:06.704-05:00  INFO 15448 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T09:58:06.715-05:00  INFO 15448 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T09:58:06.716-05:00  INFO 15448 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T09:58:06.768-05:00  INFO 15448 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T09:58:06.769-05:00  INFO 15448 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1903 ms
+2024-10-08T09:58:07.023-05:00  INFO 15448 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T09:58:07.079-05:00  INFO 15448 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T09:58:07.106-05:00  INFO 15448 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T09:58:07.368-05:00  INFO 15448 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T09:58:07.391-05:00  INFO 15448 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T09:58:07.511-05:00  INFO 15448 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4604e051
+2024-10-08T09:58:07.513-05:00  INFO 15448 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T09:58:07.545-05:00  WARN 15448 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T09:58:07.548-05:00  WARN 15448 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T09:58:08.320-05:00  INFO 15448 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T09:58:08.811-05:00  INFO 15448 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T09:58:09.070-05:00  INFO 15448 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T09:58:09.466-05:00 DEBUG 15448 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T09:58:09.583-05:00 DEBUG 15448 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T09:58:09.614-05:00 DEBUG 15448 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T09:58:09.678-05:00  INFO 15448 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T09:58:09.734-05:00 DEBUG 15448 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T09:58:09.740-05:00 DEBUG 15448 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T09:58:10.247-05:00  INFO 15448 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T09:58:10.731-05:00  INFO 15448 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T09:58:10.741-05:00  INFO 15448 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 6.336 seconds (process running for 6.892)
+2024-10-08T09:58:11.221-05:00  INFO 15448 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T09:58:11.221-05:00  INFO 15448 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T09:58:11.223-05:00  INFO 15448 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-08T09:58:21.941-05:00 DEBUG 15448 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T09:58:21.943-05:00 DEBUG 15448 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T09:59:05.726-05:00  INFO 15448 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T09:59:05.728-05:00  INFO 15448 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T09:59:05.735-05:00  INFO 15448 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T09:59:09.803-05:00  INFO 19584 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 19584 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T09:59:09.806-05:00 DEBUG 19584 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T09:59:09.807-05:00  INFO 19584 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T09:59:10.670-05:00  INFO 19584 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T09:59:10.726-05:00  INFO 19584 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 4 JPA repository interfaces.
+2024-10-08T09:59:11.360-05:00  INFO 19584 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T09:59:11.370-05:00  INFO 19584 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T09:59:11.370-05:00  INFO 19584 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T09:59:11.428-05:00  INFO 19584 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T09:59:11.428-05:00  INFO 19584 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1573 ms
+2024-10-08T09:59:11.693-05:00  INFO 19584 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T09:59:11.743-05:00  INFO 19584 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T09:59:11.771-05:00  INFO 19584 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T09:59:12.021-05:00  INFO 19584 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T09:59:12.046-05:00  INFO 19584 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T09:59:12.163-05:00  INFO 19584 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1013871e
+2024-10-08T09:59:12.166-05:00  INFO 19584 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T09:59:12.203-05:00  WARN 19584 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T09:59:12.207-05:00  WARN 19584 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T09:59:13.017-05:00  INFO 19584 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T09:59:13.226-05:00  INFO 19584 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T09:59:13.481-05:00  INFO 19584 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T09:59:13.876-05:00 DEBUG 19584 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T09:59:14.005-05:00 DEBUG 19584 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T09:59:14.034-05:00 DEBUG 19584 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T09:59:14.104-05:00  INFO 19584 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T09:59:14.166-05:00 DEBUG 19584 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T09:59:14.171-05:00 DEBUG 19584 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T09:59:14.670-05:00  INFO 19584 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T09:59:15.198-05:00  INFO 19584 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T09:59:15.212-05:00  INFO 19584 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 5.815 seconds (process running for 6.359)
+2024-10-08T09:59:15.693-05:00  INFO 19584 --- [Planta_vida] [RMI TCP Connection(3)-10.199.1.14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T09:59:15.694-05:00  INFO 19584 --- [Planta_vida] [RMI TCP Connection(3)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T09:59:15.696-05:00  INFO 19584 --- [Planta_vida] [RMI TCP Connection(3)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-08T09:59:23.796-05:00 DEBUG 19584 --- [Planta_vida] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T09:59:23.798-05:00 DEBUG 19584 --- [Planta_vida] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T09:59:43.262-05:00  INFO 19584 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T09:59:43.264-05:00  INFO 19584 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T09:59:43.271-05:00  INFO 19584 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T09:59:47.567-05:00  INFO 3720 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 3720 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T09:59:47.569-05:00 DEBUG 3720 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T09:59:47.570-05:00  INFO 3720 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T09:59:48.484-05:00  INFO 3720 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T09:59:48.555-05:00  INFO 3720 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 4 JPA repository interfaces.
+2024-10-08T09:59:49.242-05:00  INFO 3720 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T09:59:49.254-05:00  INFO 3720 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T09:59:49.254-05:00  INFO 3720 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T09:59:49.306-05:00  INFO 3720 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T09:59:49.307-05:00  INFO 3720 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1699 ms
+2024-10-08T09:59:49.620-05:00  INFO 3720 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T09:59:49.674-05:00  INFO 3720 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T09:59:49.710-05:00  INFO 3720 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T09:59:50.007-05:00  INFO 3720 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T09:59:50.036-05:00  INFO 3720 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T09:59:50.174-05:00  INFO 3720 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3e5c7588
+2024-10-08T09:59:50.176-05:00  INFO 3720 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T09:59:50.213-05:00  WARN 3720 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T09:59:50.218-05:00  WARN 3720 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T09:59:51.127-05:00  INFO 3720 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T09:59:51.486-05:00  INFO 3720 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T09:59:51.781-05:00  INFO 3720 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T09:59:52.203-05:00 DEBUG 3720 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T09:59:52.336-05:00 DEBUG 3720 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T09:59:52.368-05:00 DEBUG 3720 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T09:59:52.444-05:00  INFO 3720 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T09:59:52.504-05:00 DEBUG 3720 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T09:59:52.511-05:00 DEBUG 3720 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T09:59:53.021-05:00  INFO 3720 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T09:59:53.568-05:00  INFO 3720 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T09:59:53.580-05:00  INFO 3720 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 6.456 seconds (process running for 7.156)
+2024-10-08T09:59:53.740-05:00  INFO 3720 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T09:59:53.740-05:00  INFO 3720 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T09:59:53.742-05:00  INFO 3720 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-10-08T09:59:59.501-05:00 DEBUG 3720 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T09:59:59.503-05:00 DEBUG 3720 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T10:00:39.527-05:00  WARN 3720 --- [Planta_vida] [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=49s240ms904µs100ns).
+2024-10-08T10:08:11.637-05:00  INFO 3720 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T10:08:11.641-05:00  INFO 3720 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T10:08:11.651-05:00  INFO 3720 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T10:08:16.678-05:00  INFO 13020 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 13020 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T10:08:16.680-05:00 DEBUG 13020 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T10:08:16.681-05:00  INFO 13020 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T10:08:17.675-05:00  INFO 13020 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T10:08:17.740-05:00  INFO 13020 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+2024-10-08T10:08:18.443-05:00  INFO 13020 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T10:08:18.455-05:00  INFO 13020 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T10:08:18.456-05:00  INFO 13020 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T10:08:18.508-05:00  INFO 13020 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T10:08:18.508-05:00  INFO 13020 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1787 ms
+2024-10-08T10:08:18.809-05:00  INFO 13020 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T10:08:18.869-05:00  INFO 13020 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T10:08:18.902-05:00  INFO 13020 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T10:08:19.191-05:00  INFO 13020 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T10:08:19.226-05:00  INFO 13020 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T10:08:19.365-05:00  INFO 13020 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3d2eb7fa
+2024-10-08T10:08:19.367-05:00  INFO 13020 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T10:08:19.406-05:00  WARN 13020 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T10:08:19.410-05:00  WARN 13020 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T10:08:20.335-05:00  INFO 13020 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T10:08:20.470-05:00  INFO 13020 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T10:08:20.781-05:00  INFO 13020 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T10:08:21.204-05:00 DEBUG 13020 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T10:08:21.388-05:00 DEBUG 13020 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T10:08:21.425-05:00 DEBUG 13020 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T10:08:21.494-05:00  INFO 13020 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T10:08:21.540-05:00 DEBUG 13020 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T10:08:21.544-05:00 DEBUG 13020 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T10:08:22.039-05:00  INFO 13020 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T10:08:22.563-05:00  INFO 13020 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T10:08:22.574-05:00  INFO 13020 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 6.358 seconds (process running for 7.042)
+2024-10-08T10:08:22.590-05:00  INFO 13020 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T10:08:22.593-05:00  INFO 13020 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T10:08:22.600-05:00  INFO 13020 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T10:08:27.121-05:00  INFO 752 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 752 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T10:08:27.124-05:00 DEBUG 752 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T10:08:27.125-05:00  INFO 752 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T10:08:28.098-05:00  INFO 752 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T10:08:28.159-05:00  INFO 752 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 4 JPA repository interfaces.
+2024-10-08T10:08:28.796-05:00  INFO 752 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T10:08:28.805-05:00  INFO 752 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T10:08:28.807-05:00  INFO 752 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T10:08:28.869-05:00  INFO 752 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T10:08:28.869-05:00  INFO 752 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1692 ms
+2024-10-08T10:08:29.132-05:00  INFO 752 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T10:08:29.178-05:00  INFO 752 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T10:08:29.208-05:00  INFO 752 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T10:08:29.462-05:00  INFO 752 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T10:08:29.485-05:00  INFO 752 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T10:08:29.610-05:00  INFO 752 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d22ed6c
+2024-10-08T10:08:29.611-05:00  INFO 752 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T10:08:29.643-05:00  WARN 752 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T10:08:29.647-05:00  WARN 752 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T10:08:30.449-05:00  INFO 752 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T10:08:30.552-05:00  INFO 752 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T10:08:30.823-05:00  INFO 752 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T10:08:31.209-05:00 DEBUG 752 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T10:08:31.330-05:00 DEBUG 752 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T10:08:31.362-05:00 DEBUG 752 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T10:08:31.427-05:00  INFO 752 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T10:08:31.479-05:00 DEBUG 752 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T10:08:31.483-05:00 DEBUG 752 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T10:08:31.957-05:00  INFO 752 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T10:08:32.467-05:00  INFO 752 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T10:08:32.478-05:00  INFO 752 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 5.752 seconds (process running for 6.325)
+2024-10-08T10:08:32.981-05:00  INFO 752 --- [Planta_vida] [RMI TCP Connection(3)-10.199.1.14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T10:08:32.981-05:00  INFO 752 --- [Planta_vida] [RMI TCP Connection(3)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T10:08:32.983-05:00  INFO 752 --- [Planta_vida] [RMI TCP Connection(3)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-10-08T10:08:40.341-05:00 DEBUG 752 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T10:08:40.343-05:00 DEBUG 752 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T10:09:09.806-05:00 DEBUG 752 --- [Planta_vida] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T10:09:09.809-05:00 DEBUG 752 --- [Planta_vida] [http-nio-8080-exec-3] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T10:14:39.598-05:00  INFO 752 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T10:14:39.600-05:00  INFO 752 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T10:14:39.608-05:00  INFO 752 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T10:16:37.011-05:00  INFO 5608 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 5608 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T10:16:37.012-05:00 DEBUG 5608 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T10:16:37.013-05:00  INFO 5608 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T10:16:37.875-05:00  INFO 5608 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T10:16:37.931-05:00  INFO 5608 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 4 JPA repository interfaces.
+2024-10-08T10:16:38.556-05:00  INFO 5608 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T10:16:38.566-05:00  INFO 5608 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T10:16:38.567-05:00  INFO 5608 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T10:16:38.614-05:00  INFO 5608 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T10:16:38.615-05:00  INFO 5608 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1551 ms
+2024-10-08T10:16:39.201-05:00  INFO 5608 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T10:16:39.247-05:00  INFO 5608 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T10:16:39.275-05:00  INFO 5608 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T10:16:39.540-05:00  INFO 5608 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T10:16:39.562-05:00  INFO 5608 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T10:16:39.681-05:00  INFO 5608 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@37c37d67
+2024-10-08T10:16:39.683-05:00  INFO 5608 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T10:16:39.713-05:00  WARN 5608 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T10:16:39.717-05:00  WARN 5608 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T10:16:40.528-05:00  INFO 5608 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T10:16:41.045-05:00  INFO 5608 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T10:16:41.258-05:00  INFO 5608 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T10:16:41.699-05:00 DEBUG 5608 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T10:16:41.811-05:00 DEBUG 5608 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T10:16:41.839-05:00 DEBUG 5608 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T10:16:41.912-05:00  INFO 5608 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T10:16:41.969-05:00 DEBUG 5608 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T10:16:41.974-05:00 DEBUG 5608 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T10:16:42.623-05:00  INFO 5608 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T10:16:43.207-05:00  INFO 5608 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T10:16:43.218-05:00  INFO 5608 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 6.6 seconds (process running for 7.15)
+2024-10-08T10:16:43.567-05:00  INFO 5608 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T10:16:43.567-05:00  INFO 5608 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T10:16:43.569-05:00  INFO 5608 --- [Planta_vida] [RMI TCP Connection(2)-10.199.1.14] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-10-08T10:17:04.270-05:00  INFO 5608 --- [Planta_vida] [http-nio-8080-exec-1] c.p.service.impl.UserServiceImpl         : Sign Up User com.planta_vida.dto.UserSignUpDTO@21620a94
+2024-10-08T10:17:04.272-05:00 DEBUG 5608 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T10:17:04.276-05:00 DEBUG 5608 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T10:17:04.298-05:00 DEBUG 5608 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        user
+        (direccion_completa, email, nombre_completo, password, status, telefono, username) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2024-10-08T10:17:04.641-05:00 DEBUG 5608 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    update
+        user 
+    set
+        direccion_completa=?,
+        email=?,
+        nombre_completo=?,
+        password=?,
+        status=?,
+        telefono=?,
+        username=? 
+    where
+        id=?
+2024-10-08T10:17:04.650-05:00  INFO 5608 --- [Planta_vida] [http-nio-8080-exec-1] com.planta_vida.rest.UserController      : Registration response: <201 CREATED Created,{message=Usuario registrado con éxito!, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWFpbDEyQGV4YW1wbGUuY29tIiwiaWF0IjoxNzI4NDAwNjI0LCJleHAiOjE3Mjg0MzY2MjR9.cXKh4x6SN16Xji9y0GCke2Pedr6ufNTFy5cf6nC6wdE},[]>
+2024-10-08T10:17:34.818-05:00 ERROR 5608 --- [Planta_vida] [http-nio-8080-exec-3] com.planta_vida.security.jwt.JwtFilter   : Error extracting username from JWT: Token JWT inválido
+2024-10-08T10:18:13.606-05:00 DEBUG 5608 --- [Planta_vida] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T10:18:13.608-05:00 DEBUG 5608 --- [Planta_vida] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T10:18:52.184-05:00  INFO 5608 --- [Planta_vida] [http-nio-8080-exec-4] com.planta_vida.security.jwt.JwtFilter   : Extracted Username: email12@example.com 
+2024-10-08T10:18:52.186-05:00  INFO 5608 --- [Planta_vida] [http-nio-8080-exec-4] c.p.security.CustomerDetailsService      : Dentro de loadUserByUsername. email12@example.com
+2024-10-08T10:18:52.188-05:00 DEBUG 5608 --- [Planta_vida] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T10:18:52.189-05:00 DEBUG 5608 --- [Planta_vida] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T10:18:52.191-05:00  INFO 5608 --- [Planta_vida] [http-nio-8080-exec-4] c.p.security.CustomerDetailsService      : Usuario encontrado: com.planta_vida.pojo.User@6fe306f8
+2024-10-08T10:19:11.764-05:00  INFO 5608 --- [Planta_vida] [http-nio-8080-exec-5] com.planta_vida.security.jwt.JwtFilter   : Extracted Username: email12@example.com 
+2024-10-08T10:19:11.765-05:00  INFO 5608 --- [Planta_vida] [http-nio-8080-exec-5] c.p.security.CustomerDetailsService      : Dentro de loadUserByUsername. email12@example.com
+2024-10-08T10:19:11.768-05:00 DEBUG 5608 --- [Planta_vida] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T10:19:11.769-05:00 DEBUG 5608 --- [Planta_vida] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T10:19:11.771-05:00  INFO 5608 --- [Planta_vida] [http-nio-8080-exec-5] c.p.security.CustomerDetailsService      : Usuario encontrado: com.planta_vida.pojo.User@6226626c
+2024-10-08T10:24:33.511-05:00 DEBUG 5608 --- [Planta_vida] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T10:24:33.513-05:00 DEBUG 5608 --- [Planta_vida] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T10:40:44.957-05:00  INFO 5608 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T10:40:45.365-05:00  INFO 5608 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T10:40:45.479-05:00  INFO 5608 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T15:23:08.070-05:00  INFO 2280 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 2280 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T15:23:08.072-05:00 DEBUG 2280 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T15:23:08.073-05:00  INFO 2280 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T15:23:10.114-05:00  INFO 2280 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T15:23:10.337-05:00  INFO 2280 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 118 ms. Found 4 JPA repository interfaces.
+2024-10-08T15:23:11.695-05:00  INFO 2280 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T15:23:11.715-05:00  INFO 2280 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T15:23:11.715-05:00  INFO 2280 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T15:23:11.809-05:00  INFO 2280 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T15:23:11.810-05:00  INFO 2280 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3662 ms
+2024-10-08T15:23:12.311-05:00  INFO 2280 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T15:23:12.497-05:00  INFO 2280 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T15:23:12.552-05:00  INFO 2280 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T15:23:13.237-05:00  INFO 2280 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T15:23:13.286-05:00  INFO 2280 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T15:23:13.547-05:00  INFO 2280 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@563c3aca
+2024-10-08T15:23:13.551-05:00  INFO 2280 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T15:23:13.619-05:00  WARN 2280 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T15:23:13.627-05:00  WARN 2280 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T15:23:15.069-05:00  INFO 2280 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T15:23:17.511-05:00  INFO 2280 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T15:23:17.997-05:00  INFO 2280 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T15:23:18.778-05:00 DEBUG 2280 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T15:23:18.987-05:00 DEBUG 2280 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T15:23:19.041-05:00 DEBUG 2280 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T15:23:19.147-05:00  INFO 2280 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T15:23:19.244-05:00 DEBUG 2280 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T15:23:19.256-05:00 DEBUG 2280 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T15:23:20.116-05:00  INFO 2280 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T15:23:22.385-05:00  INFO 2280 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T15:23:22.403-05:00  INFO 2280 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 15.151 seconds (process running for 18.368)
+2024-10-08T15:23:23.035-05:00  INFO 2280 --- [Planta_vida] [RMI TCP Connection(1)-192.168.0.4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T15:23:23.035-05:00  INFO 2280 --- [Planta_vida] [RMI TCP Connection(1)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T15:23:23.039-05:00  INFO 2280 --- [Planta_vida] [RMI TCP Connection(1)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-10-08T15:30:11.523-05:00  INFO 2280 --- [Planta_vida] [http-nio-8080-exec-1] c.p.service.impl.UserServiceImpl         : Sign Up User com.planta_vida.dto.UserSignUpDTO@16348e1a
+2024-10-08T15:30:11.531-05:00 DEBUG 2280 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T15:30:11.537-05:00 DEBUG 2280 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T15:30:11.541-05:00  INFO 2280 --- [Planta_vida] [http-nio-8080-exec-1] com.planta_vida.rest.UserController      : Registration response: <400 BAD_REQUEST Bad Request,{message=El usuario con ese email ya existe},[]>
+2024-10-08T15:30:23.790-05:00 DEBUG 2280 --- [Planta_vida] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T15:30:23.793-05:00 DEBUG 2280 --- [Planta_vida] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T15:55:41.575-05:00  INFO 2280 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T15:55:41.667-05:00  INFO 2280 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T15:55:41.738-05:00  INFO 2280 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T15:55:56.007-05:00  INFO 17768 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 17768 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T15:55:56.011-05:00 DEBUG 17768 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T15:55:56.012-05:00  INFO 17768 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T15:55:57.569-05:00  INFO 17768 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T15:55:57.680-05:00  INFO 17768 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 4 JPA repository interfaces.
+2024-10-08T15:55:58.847-05:00  INFO 17768 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T15:55:58.869-05:00  INFO 17768 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T15:55:58.869-05:00  INFO 17768 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T15:55:58.960-05:00  INFO 17768 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T15:55:58.961-05:00  INFO 17768 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2870 ms
+2024-10-08T15:55:59.410-05:00  INFO 17768 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T15:55:59.520-05:00  INFO 17768 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T15:55:59.575-05:00  INFO 17768 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T15:56:00.029-05:00  INFO 17768 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T15:56:00.066-05:00  INFO 17768 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T15:56:00.249-05:00  INFO 17768 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e030feb
+2024-10-08T15:56:00.251-05:00  INFO 17768 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T15:56:00.312-05:00  WARN 17768 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T15:56:00.318-05:00  WARN 17768 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T15:56:01.465-05:00  INFO 17768 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T15:56:01.678-05:00  INFO 17768 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T15:56:01.966-05:00  INFO 17768 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T15:56:02.607-05:00 DEBUG 17768 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T15:56:02.790-05:00 DEBUG 17768 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T15:56:02.942-05:00 DEBUG 17768 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T15:56:03.034-05:00  INFO 17768 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T15:56:03.101-05:00 DEBUG 17768 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T15:56:03.107-05:00 DEBUG 17768 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T15:56:03.858-05:00  INFO 17768 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T15:56:04.624-05:00  INFO 17768 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T15:56:04.639-05:00  INFO 17768 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 9.29 seconds (process running for 10.339)
+2024-10-08T15:56:05.148-05:00  INFO 17768 --- [Planta_vida] [RMI TCP Connection(1)-192.168.0.4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T15:56:05.149-05:00  INFO 17768 --- [Planta_vida] [RMI TCP Connection(1)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T15:56:05.152-05:00  INFO 17768 --- [Planta_vida] [RMI TCP Connection(1)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-10-08T16:02:35.440-05:00  INFO 17768 --- [Planta_vida] [http-nio-8080-exec-1] c.p.service.impl.UserServiceImpl         : Sign Up User com.planta_vida.dto.UserSignUpDTO@32a43e31
+2024-10-08T16:02:35.442-05:00 DEBUG 17768 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T16:02:35.445-05:00 DEBUG 17768 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T16:02:35.473-05:00 DEBUG 17768 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    insert 
+    into
+        user
+        (direccion_completa, email, nombre_completo, password, status, telefono, username) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+2024-10-08T16:02:36.210-05:00 DEBUG 17768 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    update
+        user 
+    set
+        direccion_completa=?,
+        email=?,
+        nombre_completo=?,
+        password=?,
+        status=?,
+        telefono=?,
+        username=? 
+    where
+        id=?
+2024-10-08T16:02:36.220-05:00  INFO 17768 --- [Planta_vida] [http-nio-8080-exec-1] com.planta_vida.rest.UserController      : Registration response: <201 CREATED Created,{message=Usuario registrado con éxito!, token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlbWFpbDEyNkBleGFtcGxlLmNvbSIsImlhdCI6MTcyODQyMTM1NSwiZXhwIjoxNzI4NDU3MzU1fQ.9uuhjzOW_HXvfSWmHPlz6O40AkTzYXBJN0MMDVvgDZk},[]>
+2024-10-08T16:03:21.910-05:00 DEBUG 17768 --- [Planta_vida] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email is null
+2024-10-08T16:04:29.620-05:00 DEBUG 17768 --- [Planta_vida] [http-nio-8080-exec-4] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email is null
+2024-10-08T16:05:20.151-05:00  INFO 17768 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T16:05:20.154-05:00  INFO 17768 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T16:05:20.165-05:00  INFO 17768 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T16:05:25.250-05:00  INFO 26976 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 26976 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T16:05:25.252-05:00 DEBUG 26976 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T16:05:25.253-05:00  INFO 26976 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T16:05:26.151-05:00  INFO 26976 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T16:05:26.226-05:00  INFO 26976 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 66 ms. Found 4 JPA repository interfaces.
+2024-10-08T16:05:26.947-05:00  INFO 26976 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T16:05:26.966-05:00  INFO 26976 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T16:05:26.966-05:00  INFO 26976 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T16:05:27.022-05:00  INFO 26976 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T16:05:27.022-05:00  INFO 26976 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1726 ms
+2024-10-08T16:05:27.303-05:00  INFO 26976 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T16:05:27.370-05:00  INFO 26976 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T16:05:27.407-05:00  INFO 26976 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T16:05:27.705-05:00  INFO 26976 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T16:05:27.733-05:00  INFO 26976 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T16:05:27.861-05:00  INFO 26976 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@194e78af
+2024-10-08T16:05:27.862-05:00  INFO 26976 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T16:05:27.898-05:00  WARN 26976 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T16:05:27.903-05:00  WARN 26976 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T16:05:28.869-05:00  INFO 26976 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T16:05:29.044-05:00  INFO 26976 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T16:05:29.328-05:00  INFO 26976 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T16:05:29.741-05:00 DEBUG 26976 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T16:05:29.864-05:00 DEBUG 26976 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T16:05:29.895-05:00 DEBUG 26976 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T16:05:29.955-05:00  INFO 26976 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T16:05:30.012-05:00 DEBUG 26976 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T16:05:30.018-05:00 DEBUG 26976 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T16:05:30.555-05:00  INFO 26976 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T16:05:31.059-05:00  INFO 26976 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T16:05:31.070-05:00  INFO 26976 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 6.217 seconds (process running for 6.841)
+2024-10-08T16:05:31.679-05:00  INFO 26976 --- [Planta_vida] [RMI TCP Connection(2)-192.168.0.4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T16:05:31.679-05:00  INFO 26976 --- [Planta_vida] [RMI TCP Connection(2)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T16:05:31.680-05:00  INFO 26976 --- [Planta_vida] [RMI TCP Connection(2)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2024-10-08T16:05:37.383-05:00 DEBUG 26976 --- [Planta_vida] [http-nio-8080-exec-6] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email is null
+2024-10-08T16:12:05.602-05:00 DEBUG 26976 --- [Planta_vida] [http-nio-8080-exec-7] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email is null
+2024-10-08T16:33:11.246-05:00  INFO 26976 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T16:33:11.535-05:00  INFO 26976 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T16:33:11.866-05:00  INFO 26976 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T16:33:19.414-05:00  INFO 23380 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 23380 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T16:33:19.417-05:00 DEBUG 23380 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T16:33:19.417-05:00  INFO 23380 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T16:33:20.312-05:00  INFO 23380 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T16:33:20.425-05:00  INFO 23380 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 103 ms. Found 4 JPA repository interfaces.
+2024-10-08T16:33:21.117-05:00  INFO 23380 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T16:33:21.129-05:00  INFO 23380 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T16:33:21.129-05:00  INFO 23380 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T16:33:21.184-05:00  INFO 23380 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T16:33:21.184-05:00  INFO 23380 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1719 ms
+2024-10-08T16:33:21.469-05:00  INFO 23380 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T16:33:21.538-05:00  INFO 23380 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T16:33:21.579-05:00  INFO 23380 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T16:33:21.880-05:00  INFO 23380 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T16:33:21.914-05:00  INFO 23380 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T16:33:22.125-05:00  INFO 23380 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1013871e
+2024-10-08T16:33:22.127-05:00  INFO 23380 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T16:33:22.167-05:00  WARN 23380 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T16:33:22.173-05:00  WARN 23380 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T16:33:23.073-05:00  INFO 23380 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T16:33:23.312-05:00  INFO 23380 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T16:33:23.583-05:00  INFO 23380 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T16:33:24.001-05:00 DEBUG 23380 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T16:33:24.119-05:00 DEBUG 23380 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T16:33:24.165-05:00 DEBUG 23380 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T16:33:24.234-05:00  INFO 23380 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T16:33:24.302-05:00 DEBUG 23380 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T16:33:24.309-05:00 DEBUG 23380 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T16:33:24.814-05:00  INFO 23380 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T16:33:25.313-05:00  INFO 23380 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T16:33:25.323-05:00  INFO 23380 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 6.302 seconds (process running for 6.987)
+2024-10-08T16:33:25.669-05:00  INFO 23380 --- [Planta_vida] [RMI TCP Connection(2)-192.168.0.4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T16:33:25.670-05:00  INFO 23380 --- [Planta_vida] [RMI TCP Connection(2)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T16:33:25.671-05:00  INFO 23380 --- [Planta_vida] [RMI TCP Connection(2)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-08T16:37:28.977-05:00  INFO 23380 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T16:37:28.980-05:00  INFO 23380 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T16:37:28.987-05:00  INFO 23380 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T16:37:32.880-05:00  INFO 20828 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 20828 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T16:37:32.882-05:00 DEBUG 20828 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T16:37:32.882-05:00  INFO 20828 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T16:37:33.740-05:00  INFO 20828 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T16:37:33.799-05:00  INFO 20828 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 4 JPA repository interfaces.
+2024-10-08T16:37:34.415-05:00  INFO 20828 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T16:37:34.426-05:00  INFO 20828 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T16:37:34.427-05:00  INFO 20828 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T16:37:34.472-05:00  INFO 20828 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T16:37:34.473-05:00  INFO 20828 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1550 ms
+2024-10-08T16:37:34.729-05:00  INFO 20828 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T16:37:34.787-05:00  INFO 20828 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T16:37:34.814-05:00  INFO 20828 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T16:37:35.052-05:00  INFO 20828 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T16:37:35.077-05:00  INFO 20828 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T16:37:35.193-05:00  INFO 20828 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7614378d
+2024-10-08T16:37:35.195-05:00  INFO 20828 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T16:37:35.227-05:00  WARN 20828 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T16:37:35.231-05:00  WARN 20828 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T16:37:35.995-05:00  INFO 20828 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T16:37:36.090-05:00  INFO 20828 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T16:37:36.357-05:00  INFO 20828 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T16:37:36.737-05:00 DEBUG 20828 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T16:37:36.854-05:00 DEBUG 20828 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T16:37:36.883-05:00 DEBUG 20828 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T16:37:36.951-05:00  INFO 20828 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T16:37:37.007-05:00 DEBUG 20828 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T16:37:37.013-05:00 DEBUG 20828 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T16:37:37.501-05:00  INFO 20828 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T16:37:37.978-05:00  INFO 20828 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T16:37:37.987-05:00  INFO 20828 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 5.51 seconds (process running for 6.075)
+2024-10-08T16:37:38.241-05:00  INFO 20828 --- [Planta_vida] [RMI TCP Connection(3)-192.168.0.4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T16:37:38.242-05:00  INFO 20828 --- [Planta_vida] [RMI TCP Connection(3)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T16:37:38.244-05:00  INFO 20828 --- [Planta_vida] [RMI TCP Connection(3)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-10-08T16:37:45.381-05:00 DEBUG 20828 --- [Planta_vida] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T16:37:45.383-05:00 DEBUG 20828 --- [Planta_vida] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T16:40:19.685-05:00  INFO 20828 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T16:40:19.689-05:00  INFO 20828 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T16:40:19.701-05:00  INFO 20828 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T16:40:25.436-05:00  INFO 22728 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 22728 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T16:40:25.438-05:00 DEBUG 22728 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T16:40:25.438-05:00  INFO 22728 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T16:40:26.316-05:00  INFO 22728 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T16:40:26.374-05:00  INFO 22728 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52 ms. Found 4 JPA repository interfaces.
+2024-10-08T16:40:27.014-05:00  INFO 22728 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T16:40:27.024-05:00  INFO 22728 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T16:40:27.025-05:00  INFO 22728 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T16:40:27.075-05:00  INFO 22728 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T16:40:27.075-05:00  INFO 22728 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1595 ms
+2024-10-08T16:40:27.342-05:00  INFO 22728 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T16:40:27.394-05:00  INFO 22728 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T16:40:27.426-05:00  INFO 22728 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T16:40:27.698-05:00  INFO 22728 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T16:40:27.722-05:00  INFO 22728 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T16:40:27.842-05:00  INFO 22728 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4ba1c1a2
+2024-10-08T16:40:27.844-05:00  INFO 22728 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T16:40:27.879-05:00  WARN 22728 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T16:40:27.882-05:00  WARN 22728 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T16:40:28.699-05:00  INFO 22728 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T16:40:28.793-05:00  INFO 22728 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T16:40:29.092-05:00  INFO 22728 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T16:40:29.549-05:00 DEBUG 22728 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T16:40:29.675-05:00 DEBUG 22728 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T16:40:29.707-05:00 DEBUG 22728 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T16:40:29.784-05:00  INFO 22728 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T16:40:29.852-05:00 DEBUG 22728 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T16:40:29.859-05:00 DEBUG 22728 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T16:40:30.352-05:00  INFO 22728 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T16:40:30.853-05:00  INFO 22728 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T16:40:30.864-05:00  INFO 22728 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 5.785 seconds (process running for 6.496)
+2024-10-08T16:40:31.013-05:00  INFO 22728 --- [Planta_vida] [RMI TCP Connection(1)-192.168.0.4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T16:40:31.013-05:00  INFO 22728 --- [Planta_vida] [RMI TCP Connection(1)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T16:40:31.015-05:00  INFO 22728 --- [Planta_vida] [RMI TCP Connection(1)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-08T16:40:37.497-05:00 DEBUG 22728 --- [Planta_vida] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T16:40:37.500-05:00 DEBUG 22728 --- [Planta_vida] [http-nio-8080-exec-2] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T16:42:10.260-05:00  INFO 22728 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T16:42:10.263-05:00  INFO 22728 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T16:42:10.270-05:00  INFO 22728 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T16:42:14.474-05:00  INFO 18296 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 18296 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T16:42:14.475-05:00 DEBUG 18296 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T16:42:14.477-05:00  INFO 18296 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T16:42:15.410-05:00  INFO 18296 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T16:42:15.465-05:00  INFO 18296 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 4 JPA repository interfaces.
+2024-10-08T16:42:16.094-05:00  INFO 18296 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T16:42:16.106-05:00  INFO 18296 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T16:42:16.107-05:00  INFO 18296 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T16:42:16.154-05:00  INFO 18296 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T16:42:16.154-05:00  INFO 18296 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1629 ms
+2024-10-08T16:42:16.420-05:00  INFO 18296 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T16:42:16.471-05:00  INFO 18296 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T16:42:16.499-05:00  INFO 18296 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T16:42:16.753-05:00  INFO 18296 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T16:42:16.783-05:00  INFO 18296 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T16:42:16.906-05:00  INFO 18296 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24c84e65
+2024-10-08T16:42:16.908-05:00  INFO 18296 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T16:42:16.941-05:00  WARN 18296 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T16:42:16.945-05:00  WARN 18296 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T16:42:17.732-05:00  INFO 18296 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T16:42:17.862-05:00  INFO 18296 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T16:42:18.074-05:00  INFO 18296 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T16:42:18.505-05:00 DEBUG 18296 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T16:42:18.628-05:00 DEBUG 18296 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T16:42:18.658-05:00 DEBUG 18296 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T16:42:18.720-05:00  INFO 18296 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T16:42:18.775-05:00 DEBUG 18296 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T16:42:18.780-05:00 DEBUG 18296 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T16:42:19.263-05:00  INFO 18296 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T16:42:19.765-05:00  INFO 18296 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T16:42:19.776-05:00  INFO 18296 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 5.723 seconds (process running for 6.367)
+2024-10-08T16:42:20.251-05:00  INFO 18296 --- [Planta_vida] [RMI TCP Connection(2)-192.168.0.4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T16:42:20.252-05:00  INFO 18296 --- [Planta_vida] [RMI TCP Connection(2)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T16:42:20.254-05:00  INFO 18296 --- [Planta_vida] [RMI TCP Connection(2)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-08T16:42:24.637-05:00 DEBUG 18296 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T16:42:24.641-05:00 DEBUG 18296 --- [Planta_vida] [http-nio-8080-exec-1] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T16:46:29.498-05:00  INFO 18296 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T16:46:29.501-05:00  INFO 18296 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T16:46:29.511-05:00  INFO 18296 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-10-08T16:46:34.437-05:00  INFO 25328 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Starting PlantaVidaApplication using Java 22.0.2 with PID 25328 (C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida\target\classes started by mao-n in C:\Users\mao-n\OneDrive\Desktop\PROYECTO FINAL\api_rest_plantavida)
+2024-10-08T16:46:34.439-05:00 DEBUG 25328 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-10-08T16:46:34.440-05:00  INFO 25328 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : No active profile set, falling back to 1 default profile: "default"
+2024-10-08T16:46:35.349-05:00  INFO 25328 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-08T16:46:35.413-05:00  INFO 25328 --- [Planta_vida] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 4 JPA repository interfaces.
+2024-10-08T16:46:36.082-05:00  INFO 25328 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-08T16:46:36.094-05:00  INFO 25328 --- [Planta_vida] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-08T16:46:36.094-05:00  INFO 25328 --- [Planta_vida] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-10-08T16:46:36.149-05:00  INFO 25328 --- [Planta_vida] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-08T16:46:36.150-05:00  INFO 25328 --- [Planta_vida] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1668 ms
+2024-10-08T16:46:36.431-05:00  INFO 25328 --- [Planta_vida] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-08T16:46:36.504-05:00  INFO 25328 --- [Planta_vida] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-10-08T16:46:36.547-05:00  INFO 25328 --- [Planta_vida] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-08T16:46:36.854-05:00  INFO 25328 --- [Planta_vida] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-08T16:46:36.881-05:00  INFO 25328 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-08T16:46:37.009-05:00  INFO 25328 --- [Planta_vida] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4cc89246
+2024-10-08T16:46:37.011-05:00  INFO 25328 --- [Planta_vida] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-08T16:46:37.053-05:00  WARN 25328 --- [Planta_vida] [main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.5 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+2024-10-08T16:46:37.059-05:00  WARN 25328 --- [Planta_vida] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-08T16:46:38.019-05:00  INFO 25328 --- [Planta_vida] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-08T16:46:38.249-05:00  INFO 25328 --- [Planta_vida] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T16:46:38.475-05:00  INFO 25328 --- [Planta_vida] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-08T16:46:39.011-05:00 DEBUG 25328 --- [Planta_vida] [main] com.planta_vida.security.jwt.JwtFilter   : Filter 'jwtFilter' configured for use
+2024-10-08T16:46:39.153-05:00 DEBUG 25328 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T16:46:39.202-05:00 DEBUG 25328 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.id,
+        r1_0.name 
+    from
+        role r1_0 
+    where
+        r1_0.name=?
+2024-10-08T16:46:39.313-05:00  INFO 25328 --- [Planta_vida] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name customerDetailsService
+2024-10-08T16:46:39.366-05:00 DEBUG 25328 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T16:46:39.372-05:00 DEBUG 25328 --- [Planta_vida] [main] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T16:46:39.940-05:00  INFO 25328 --- [Planta_vida] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2024-10-08T16:46:40.462-05:00  INFO 25328 --- [Planta_vida] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-08T16:46:40.473-05:00  INFO 25328 --- [Planta_vida] [main] com.planta_vida.PlantaVidaApplication    : Started PlantaVidaApplication in 6.483 seconds (process running for 7.192)
+2024-10-08T16:46:40.709-05:00  INFO 25328 --- [Planta_vida] [RMI TCP Connection(2)-192.168.0.4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-08T16:46:40.709-05:00  INFO 25328 --- [Planta_vida] [RMI TCP Connection(2)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-08T16:46:40.711-05:00  INFO 25328 --- [Planta_vida] [RMI TCP Connection(2)-192.168.0.4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-08T16:47:19.505-05:00 DEBUG 25328 --- [Planta_vida] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        u1_0.id,
+        u1_0.direccion_completa,
+        u1_0.email,
+        u1_0.nombre_completo,
+        u1_0.password,
+        u1_0.status,
+        u1_0.telefono,
+        u1_0.username 
+    from
+        user u1_0 
+    where
+        u1_0.email=?
+2024-10-08T16:47:19.508-05:00 DEBUG 25328 --- [Planta_vida] [http-nio-8080-exec-5] org.hibernate.SQL                        : 
+    select
+        r1_0.user_id,
+        r1_1.id,
+        r1_1.name 
+    from
+        user_roles r1_0 
+    join
+        role r1_1 
+            on r1_1.id=r1_0.role_id 
+    where
+        r1_0.user_id=?
+2024-10-08T16:52:46.179-05:00  INFO 25328 --- [Planta_vida] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-10-08T16:52:46.182-05:00  INFO 25328 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-10-08T16:52:46.189-05:00  INFO 25328 --- [Planta_vida] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
