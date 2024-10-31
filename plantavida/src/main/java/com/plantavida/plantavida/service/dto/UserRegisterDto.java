@@ -1,4 +1,4 @@
-package com.plantavida1.plantavida1.service.dto;
+package com.plantavida.plantavida.service.dto;
 
 import lombok.Data;
 

@@ -43,4 +43,10 @@ public class UserEntity {
                 ", roles=" + roles +
                 '}';
     }
+
+
+    public void setRole(String roleCustomer) {
+
+
+    }
 }

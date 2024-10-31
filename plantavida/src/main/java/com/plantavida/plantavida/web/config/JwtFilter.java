@@ -39,7 +39,14 @@ public class JwtFilter extends OncePerRequestFilter {
         }
 
         // 2. Validar que el JWT sea valido
-        String jwt = authHeader.split(" ")[1].trim();
+        String[] parts = authHeader.split(" ");
+        if (parts.length != 2) {
+            // Si no hay exactamente 2 partes (Bearer + token), manejamos el error
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Invalid Authorization header format");
+            return;
+        }
+
+        String jwt = parts[1].trim();
 
         if (!this.jwtUtil.isValid(jwt)) {
             filterChain.doFilter(request, response);

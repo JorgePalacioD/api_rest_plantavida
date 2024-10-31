@@ -16,6 +16,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableMethodSecurity(securedEnabled = true)
+
 public class SecurityConfig {
     private final JwtFilter jwtFilter;
 
@@ -27,12 +28,13 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .csrf().disable()
-                .cors().and()
+                .csrf().disable()// Desactivar CSRF para aplicaciones sin estado (stateless)
+                .cors().and()// Habilitar CORS si es necesario
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeHttpRequests()
-                .requestMatchers("/register/**").permitAll()
+                .requestMatchers("/api/auth/**", "/api/users/register", "/error").permitAll()  // Permitir acceso libre
                 .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/api/users/register").permitAll()  // Permitir sin autenticación para el registro y login
                 .requestMatchers("/api/customers/**").hasAnyRole("ADMIN", "CUSTOMER")
                 .requestMatchers(HttpMethod.GET, "/api/arboles/**").hasAnyRole("ADMIN", "CUSTOMER")
                 .requestMatchers(HttpMethod.POST, "/api/compradores/**").hasRole("ADMIN")
