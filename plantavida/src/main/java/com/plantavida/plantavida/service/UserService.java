@@ -8,6 +8,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.regex.Pattern;
 
@@ -74,5 +75,8 @@ public class UserService {
         newUser.setRole("ROLE_CUSTOMER");
 
         userRepository.save(newUser);
+    }
+    public List<UserEntity> getAllUsers() {
+        return userRepository.findAll();
     }
 }

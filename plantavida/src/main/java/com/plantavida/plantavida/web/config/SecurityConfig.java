@@ -32,7 +32,7 @@ public class SecurityConfig {
                 .cors().and()// Habilitar CORS si es necesario
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/auth/**", "/api/users/register", "/error").permitAll()  // Permitir acceso libre
+                .requestMatchers("/api/auth/**", "/api/users/register","/api/users", "/error").permitAll()  // Permitir acceso libre
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/users/register").permitAll()  // Permitir sin autenticación para el registro y login
                 .requestMatchers("/api/customers/**").hasAnyRole("ADMIN", "CUSTOMER")
