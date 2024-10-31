@@ -36,6 +36,7 @@ public class SecurityConfig {
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/api/users/register").permitAll()  // Permitir sin autenticación para el registro y login
                 .requestMatchers("/api/customers/**").hasAnyRole("ADMIN", "CUSTOMER")
+                .requestMatchers("/api/bonos/**").hasAnyRole("ADMIN", "CUSTOMER")
                 .requestMatchers(HttpMethod.GET, "/api/arboles/**").hasAnyRole("ADMIN", "CUSTOMER")
                 .requestMatchers(HttpMethod.POST, "/api/compradores/**").hasRole("ADMIN")
                 .requestMatchers(HttpMethod.PUT).hasRole("ADMIN")

@@ -1,6 +1,7 @@
 package com.plantavida.plantavida.web.controller;
 
 import com.plantavida.plantavida.service.UserService;
+import com.plantavida.plantavida.service.dto.AuthResponse;
 import com.plantavida.plantavida.service.dto.LoginDto;
 import com.plantavida.plantavida.web.config.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,17 +31,28 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<String> login(@RequestBody LoginDto loginDto) {
-        if (loginDto == null || loginDto.getIdentifier() == null || loginDto.getPassword() == null) {
-            return ResponseEntity.badRequest().body("Identifier and password must not be null");
+    public ResponseEntity<AuthResponse> login(@RequestBody LoginDto loginDto) {
+        // Verifica si el DTO es nulo o si las credenciales son nulas
+        if (loginDto == null || (loginDto.getUsername() == null && loginDto.getEmail() == null) || loginDto.getPassword() == null) {
+            return ResponseEntity.badRequest().body(new AuthResponse(null, "Identifier and password must not be null"));
         }
 
-        var userOpt = userService.authenticateUser(loginDto.getIdentifier(), loginDto.getPassword());
-        if (userOpt.isPresent()) {
-            String jwt = jwtUtil.create(userOpt.get().getUsername());
-            return ResponseEntity.ok().header(HttpHeaders.AUTHORIZATION, jwt).body("Login successful");
-        } else {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username/email or password");
+        // Crear un token de autenticación
+        UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
+                loginDto.getUsername() != null ? loginDto.getUsername() : loginDto.getEmail(),
+                loginDto.getPassword());
+
+        try {
+            // Intentar autenticar al usuario
+            Authentication authentication = authenticationManager.authenticate(authToken);
+
+            // Si la autenticación es exitosa, se genera el token JWT
+            String jwt = jwtUtil.create(authentication.getName());
+
+            // Responder con el token y mensaje en el cuerpo de la respuesta
+            return ResponseEntity.ok(new AuthResponse(jwt, "Login successful"));
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new AuthResponse(null, "Invalid username or password"));
         }
     }
 }
