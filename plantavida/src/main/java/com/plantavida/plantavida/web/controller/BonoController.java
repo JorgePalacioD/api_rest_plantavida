@@ -2,7 +2,9 @@ package com.plantavida.plantavida.web.controller;
 
 import com.plantavida.plantavida.persistence.entity.BonoEntity;
 import com.plantavida.plantavida.service.BonoService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,51 +12,34 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/bonos")
+@RequiredArgsConstructor
 public class BonoController {
+
     private final BonoService bonoService;
 
-    @Autowired
-    public BonoController(BonoService bonoService) {
-        this.bonoService = bonoService;
+    @PostMapping("/{idComprador}")
+    public ResponseEntity<BonoEntity> createBono(@RequestBody BonoEntity bono, @PathVariable Integer idComprador) {
+        BonoEntity createdBono = bonoService.createBono(bono, idComprador);
+        return ResponseEntity.status(HttpStatus.CREATED).body(createdBono);
     }
 
-    @GetMapping
-    public ResponseEntity<List<BonoEntity>> getAll() {
-        return ResponseEntity.ok(this.bonoService.getAll());
+    @GetMapping("/comprador/{idComprador}")
+    public List<BonoEntity> getBonosByComprador(@PathVariable Integer idComprador) {
+        return bonoService.getBonosByCompradorId(idComprador);
     }
 
-    @GetMapping("/{idBono}")
-    public ResponseEntity<BonoEntity> get(@PathVariable int idBono) {
-        return ResponseEntity.ok(this.bonoService.get(idBono));
+    @GetMapping("/{id}")
+    public ResponseEntity<BonoEntity> getBonoById(@PathVariable Integer id) {
+        return bonoService.getBonoById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
-    @PostMapping
-    public ResponseEntity<BonoEntity> add(@RequestBody BonoEntity bono) {
-        if (bono.getIdBono() == null || !this.bonoService.exist(bono.getIdComprador())) {
-            return ResponseEntity.ok(this.bonoService.save(bono));
-        }
-
-        return ResponseEntity.badRequest().build();
+    @PutMapping("/{id}")
+    public ResponseEntity<BonoEntity> updateBono(
+            @PathVariable Integer id,
+            @RequestBody BonoEntity bonoDetails) {
+        BonoEntity updatedBono = bonoService.updateBono(id, bonoDetails);
+        return ResponseEntity.ok(updatedBono);
     }
-
-    @PutMapping
-    public ResponseEntity<BonoEntity> update(@RequestBody BonoEntity bono) {
-        if (bono.getIdBono() != null && this.bonoService.exist(bono.getIdComprador())) {
-            return ResponseEntity.ok(this.bonoService.save(bono));
-        }
-
-        return ResponseEntity.badRequest().build();
-    }
-
-    @DeleteMapping("/{idBonol}")
-    public ResponseEntity<Void> delete(@PathVariable int idBono) {
-        if (this.bonoService.exist(idBono)) {
-            this.bonoService.delete(idBono);
-            return ResponseEntity.ok().build();
-        }
-
-        return ResponseEntity.badRequest().build();
-    }
-
-
 }

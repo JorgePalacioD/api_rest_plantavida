@@ -18,9 +18,6 @@ public class ArbolEntity {
     @Column(name = "id_arbol")
     private Integer idArbol;
 
-    @Column(name = "id_bono", nullable = false)
-    private Integer idBono;
-
     @Column(nullable = false, length = 50)
     private String tipo;
 
@@ -30,8 +27,10 @@ public class ArbolEntity {
     @Column(nullable = false, length = 50)
     private String ubicacion;
 
+    @Column(nullable = false, length = 50)
+    private String imagen;
+
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_bono", referencedColumnName = "id_bono", insertable = false, updatable = false)
-    @JsonIgnore
+    @JoinColumn(name = "id_bono", nullable = false)
     private BonoEntity bono;
 }

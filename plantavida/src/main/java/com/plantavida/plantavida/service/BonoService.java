@@ -1,38 +1,45 @@
 package com.plantavida.plantavida.service;
 
 import com.plantavida.plantavida.persistence.entity.BonoEntity;
+import com.plantavida.plantavida.persistence.entity.CompradorEntity;
 import com.plantavida.plantavida.persistence.repository.BonoRepository;
+import com.plantavida.plantavida.persistence.repository.CompradorRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class BonoService {
+
     private final BonoRepository bonoRepository;
+    private final CompradorRepository compradorRepository;
 
-    @Autowired
-    public BonoService(BonoRepository bonoRepository) {
-        this.bonoRepository = bonoRepository;
+    public BonoEntity createBono(BonoEntity bono, Integer idComprador) {
+        CompradorEntity comprador = compradorRepository.findById(idComprador)
+                .orElseThrow(() -> new RuntimeException("Comprador no encontrado"));
+        bono.setComprador(comprador);
+        return bonoRepository.save(bono);
     }
 
-    public List<BonoEntity>getAll() {
-        return this.bonoRepository.findAll();
+    public List<BonoEntity> getBonosByCompradorId(Integer idComprador) {
+        return bonoRepository.findByCompradorIdComprador(idComprador);
     }
 
-    public BonoEntity get(int idBono) {
-        return this.bonoRepository.findById(idBono).orElse(null);
+    public Optional<BonoEntity> getBonoById(Integer id) {
+        return bonoRepository.findById(id);
     }
 
-    public BonoEntity save(BonoEntity bono) {
-        return this.bonoRepository.save(bono);
-    }
+    public BonoEntity updateBono(Integer id, BonoEntity bonoDetails) {
+        BonoEntity bono = bonoRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Bono no encontrado"));
 
-    public Boolean exist(int idBono) {
-        return this.bonoRepository.existsById(idBono);
-    }
-
-    public void delete(int idBono) {
-        this.bonoRepository.deleteById(idBono);
+        bono.setTipo(bonoDetails.getTipo());
+        bono.setDescripcion(bonoDetails.getDescripcion());
+        bono.setPrecio(bonoDetails.getPrecio());
+        return bonoRepository.save(bono);
     }
 }

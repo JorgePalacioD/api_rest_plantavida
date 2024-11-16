@@ -2,37 +2,38 @@ package com.plantavida.plantavida.service;
 
 import com.plantavida.plantavida.persistence.entity.CompradorEntity;
 import com.plantavida.plantavida.persistence.repository.CompradorRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class CompradorService {
+
     private final CompradorRepository compradorRepository;
 
-    @Autowired
-    public CompradorService(CompradorRepository compradorRepository) {
-        this.compradorRepository = compradorRepository;
+    public CompradorEntity createComprador(CompradorEntity comprador) {
+        return compradorRepository.save(comprador);
     }
 
-    public List<CompradorEntity> getAll() {
-        return this.compradorRepository.findAll();
+    public List<CompradorEntity> getAllCompradores() {
+        return compradorRepository.findAll();
     }
 
-    public CompradorEntity get(int idComprador) {
-        return this.compradorRepository.findById(idComprador).orElse(null);
+    public Optional<CompradorEntity> getCompradorById(Integer id) {
+        return compradorRepository.findById(id);
     }
 
-    public CompradorEntity save(CompradorEntity comprador) {
-        return this.compradorRepository.save(comprador);
-    }
+    public CompradorEntity updateComprador(Integer id, CompradorEntity compradorDetails) {
+        CompradorEntity comprador = compradorRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Comprador no encontrado"));
 
-    public boolean exist(int idComprador) {
-        return this.compradorRepository.existsById(idComprador);
-    }
-
-    public void delete(int idComprador) {
-        this.compradorRepository.deleteById(idComprador);
+        comprador.setNombre(compradorDetails.getNombre());
+        comprador.setDireccion(compradorDetails.getDireccion());
+        comprador.setCorreoElectronico(compradorDetails.getCorreoElectronico());
+        return compradorRepository.save(comprador);
     }
 }

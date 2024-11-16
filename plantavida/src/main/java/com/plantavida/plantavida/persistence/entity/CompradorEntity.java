@@ -16,11 +16,8 @@ import java.util.List;
 public class CompradorEntity {
 
     @Id
-    @Column(name = "id_comprador",nullable = false)
+    @Column(name = "id_comprador", nullable = false)
     private Integer idComprador;
-
-    @Column(name = "id_bono", nullable = false)
-    private Integer idBono;
 
     @Column(nullable = false, length = 45, unique = true)
     private String nombre;
@@ -31,7 +28,7 @@ public class CompradorEntity {
     @Column(name = "correo_electronico", nullable = false, length = 45, unique = true)
     private String correoElectronico;
 
-    @OneToMany(mappedBy = "comprador", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "comprador", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<BonoEntity> bonos;
     }
 
