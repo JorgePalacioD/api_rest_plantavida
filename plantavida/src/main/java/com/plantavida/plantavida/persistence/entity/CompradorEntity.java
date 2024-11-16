@@ -14,6 +14,7 @@ import java.util.List;
 @NoArgsConstructor
 
 public class CompradorEntity {
+
     @Id
     @Column(name = "id_comprador",nullable = false)
     private Integer idComprador;
@@ -32,5 +33,5 @@ public class CompradorEntity {
 
     @OneToMany(mappedBy = "comprador", fetch = FetchType.EAGER)
     private List<BonoEntity> bonos;
+    }
 
-}

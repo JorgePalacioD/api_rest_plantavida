@@ -25,7 +25,7 @@ public class ArbolEntity {
     private String tipo;
 
     @Column(nullable = false, length = 200)
-    private String descipcion;
+    private String descripcion;
 
     @Column(nullable = false, length = 50)
     private String ubicacion;
