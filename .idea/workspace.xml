@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b76e090f-556e-4002-a680-ee50261ce814" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/service/CustomUserDetailsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/service/PagoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/service/dto/CompraDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/service/dto/PagoRequestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/service/dto/PagoResponseDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/web/config/AppConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/web/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/web/controller/PagoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantavida/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/plantavida/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/persistence/entity/CompradorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/persistence/entity/CompradorEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/persistence/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/persistence/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/web/config/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/web/config/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantavida/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/plantavida/src/main/resources/application.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/plantavida">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="plantavida" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2nviRHtOCjB474hU4WquVPW0cmw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.Build plantavida.executor": "Run",
+    "Gradle.plantavida [dependencies].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.PlantavidaApplication.executor": "Run",
+    "git-widget-placeholder": "feature/desarrollar-api-rest-gestion-usuarios",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/mao-n/OneDrive/Desktop/APIREST_PLANTAVIDA",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.plantavida.plantavida.service" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\mao-n\OneDrive\Desktop\Api_rest_PlantaVida\api_rest_plantavida\plantavida\src\main\java\com\plantavida\plantavida\service\dto" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.plantavida.plantavida.service.dto" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.PlantavidaApplication">
+    <configuration name="plantavida [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/plantavida" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="PlantavidaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="plantavida.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.plantavida.plantavida.PlantavidaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.plantavida [dependencies]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b76e090f-556e-4002-a680-ee50261ce814" name="Changes" comment="" />
+      <created>1729859943423</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1729859943423</updated>
+      <workItem from="1729859946701" duration="146000" />
+      <workItem from="1729910242687" duration="149000" />
+      <workItem from="1730115248322" duration="2929000" />
+      <workItem from="1730122490533" duration="2121000" />
+      <workItem from="1730130823448" duration="141000" />
+      <workItem from="1730132160044" duration="30000" />
+      <workItem from="1730200509867" duration="5397000" />
+      <workItem from="1730290315994" duration="57000" />
+      <workItem from="1730335093912" duration="8779000" />
+      <workItem from="1730389489678" duration="5079000" />
+      <workItem from="1730498756057" duration="5525000" />
+      <workItem from="1730517853342" duration="4878000" />
+      <workItem from="1730752389027" duration="7058000" />
+      <workItem from="1730809096997" duration="1403000" />
+      <workItem from="1730813805779" duration="4993000" />
+      <workItem from="1730821185117" duration="2358000" />
+      <workItem from="1730920967793" duration="1058000" />
+      <workItem from="1731175004159" duration="2941000" />
+      <workItem from="1731193044231" duration="7560000" />
+      <workItem from="1731355883975" duration="2876000" />
+      <workItem from="1731359907716" duration="657000" />
+      <workItem from="1731511494150" duration="9121000" />
+      <workItem from="1731524231035" duration="5184000" />
+      <workItem from="1731542926417" duration="3751000" />
+      <workItem from="1731549352229" duration="2816000" />
+      <workItem from="1731602136711" duration="21437000" />
+      <workItem from="1731637776754" duration="25000" />
+      <workItem from="1731679578632" duration="171000" />
+      <workItem from="1731687683034" duration="1657000" />
+      <workItem from="1731693634488" duration="663000" />
+      <workItem from="1731709120100" duration="1083000" />
+      <workItem from="1731929213899" duration="87000" />
+      <workItem from="1731929877901" duration="1900000" />
+      <workItem from="1731934885071" duration="1457000" />
+      <workItem from="1731968239512" duration="655000" />
+      <workItem from="1731968914875" duration="198000" />
+      <workItem from="1731969271095" duration="135000" />
+      <workItem from="1731970670638" duration="364000" />
+      <workItem from="1731971061438" duration="146000" />
+      <workItem from="1731972496560" duration="6093000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Metodo_De_Pago" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.maven.plugins:maven-javadoc-plugin:3.6.0" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="org.apache.maven.plugins" artifactId="maven-javadoc-plugin" version="3.6.0" />
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.maven.plugins/maven-javadoc-plugin/3.6.0/ae708a54a857032c9d1e3f6d2f51b0992d870039/maven-javadoc-plugin-3.6.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

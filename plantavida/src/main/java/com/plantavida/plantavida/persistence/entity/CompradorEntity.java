@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.List;
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "comprador")
@@ -30,5 +31,15 @@ public class CompradorEntity {
 
     @OneToMany(mappedBy = "comprador", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<BonoEntity> bonos;
+    // Almacena las transacciones asociadas al comprador
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "transacciones", joinColumns = @JoinColumn(name = "id_comprador"))
+    @Column(name = "transaction_id")
+    private List<String> transacciones = new ArrayList<>();
+
+    // Método para agregar una transacción
+    public void addTransaction(String transactionId) {
+        this.transacciones.add(transactionId);
     }
+}
 
