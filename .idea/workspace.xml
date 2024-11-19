@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b76e090f-556e-4002-a680-ee50261ce814" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/service/CustomUserDetailsService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/service/PagoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/service/dto/CompraDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/service/dto/PagoRequestDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/service/dto/PagoResponseDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/web/config/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/web/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/web/controller/PagoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantavida/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/plantavida/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/persistence/entity/CompradorEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/persistence/entity/CompradorEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/persistence/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/persistence/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/web/config/JwtFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/web/config/JwtFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/web/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/plantavida/src/main/java/com/plantavida/plantavida/web/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/plantavida/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/plantavida/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,29 +57,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build plantavida.executor": "Run",
-    "Gradle.plantavida [dependencies].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.PlantavidaApplication.executor": "Run",
-    "git-widget-placeholder": "feature/desarrollar-api-rest-gestion-usuarios",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/mao-n/OneDrive/Desktop/APIREST_PLANTAVIDA",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.Build plantavida.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.plantavida [dependencies].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.PlantavidaApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/desarrollar-api-rest-gestion-usuarios&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mao-n/OneDrive/Desktop/APIREST_PLANTAVIDA&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.plantavida.plantavida.service" />
@@ -192,7 +182,10 @@
       <workItem from="1731969271095" duration="135000" />
       <workItem from="1731970670638" duration="364000" />
       <workItem from="1731971061438" duration="146000" />
-      <workItem from="1731972496560" duration="6093000" />
+      <workItem from="1731972496560" duration="6834000" />
+      <workItem from="1731979565972" duration="68000" />
+      <workItem from="1731979643140" duration="7000" />
+      <workItem from="1732015516827" duration="1883000" />
     </task>
     <servers />
   </component>
