@@ -1,50 +1,53 @@
 package com.plantavida.plantavida.service;
 
 import com.plantavida.plantavida.persistence.entity.UserEntity;
+import com.plantavida.plantavida.persistence.entity.UserRoleEntity;
 import com.plantavida.plantavida.persistence.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.plantavida.plantavida.persistence.repository.UserRoleRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
-import java.util.Optional;
-import java.util.regex.Pattern;
+import java.time.LocalDateTime;
 
 @Service
+@RequiredArgsConstructor
 public class UserService {
+
     private final UserRepository userRepository;
+    private final UserRoleRepository userRoleRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    @Autowired
-    public UserService(UserRepository userRepository) {
-        this.userRepository = userRepository;
-    }
-
-    // Expresión regular para validar email
-    private static final String EMAIL_REGEX = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
-
-    // Validar contraseña: al menos 8 caracteres, un número y una letra
-    private static final String PASSWORD_REGEX = "^(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$";
-
-    public UserEntity saveUser(UserEntity user) {
-        if (!isValidEmail(user.getEmail())) {
-            throw new IllegalArgumentException("Email inválido");
-        }
-        if (!isValidPassword(user.getPassword())) {
-            throw new IllegalArgumentException("Contraseña inválida: debe tener al menos 8 caracteres, incluyendo letras y números");
+    public UserEntity register(UserEntity userDetails) {
+        // Validar existencia de usuario o correo
+        if (userRepository.existsByUsername(userDetails.getUsername())) {
+            throw new RuntimeException("El nombre de usuario ya existe");
         }
 
-        // Guardar el usuario
-        return userRepository.save(user);
-    }
+        if (userRepository.existsByEmail(userDetails.getEmail())) {
+            throw new RuntimeException("El correo electrónico ya está en uso");
+        }
 
-    public Optional<UserEntity> findUserByEmail(String email) {
-        return userRepository.findByEmail(email);
-    }
+        // Encriptar contraseña
+        userDetails.setPassword(passwordEncoder.encode(userDetails.getPassword()));
+        userDetails.setLocked(false);
+        userDetails.setDisabled(false);
 
-    private boolean isValidEmail(String email) {
-        return StringUtils.hasText(email) && Pattern.matches(EMAIL_REGEX, email);
-    }
+        // Guardar usuario
+        UserEntity savedUser = userRepository.save(userDetails);
 
-    private boolean isValidPassword(String password) {
-        return StringUtils.hasText(password) && Pattern.matches(PASSWORD_REGEX, password);
+        // Asignar rol CUSTOMER
+        UserRoleEntity userRole = new UserRoleEntity();
+        userRole.setUsername(savedUser.getUsername());
+        userRole.setRole("CUSTOMER");
+        userRole.setGrantedDate(LocalDateTime.now());
+        userRole.setUser(savedUser);
+
+        userRoleRepository.save(userRole);
+
+        return savedUser;
     }
 }
+
+
+

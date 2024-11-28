@@ -1,6 +1,8 @@
 package com.plantavida.plantavida.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,8 +31,10 @@ public class BonoEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_comprador", nullable = false)
+    @JsonBackReference
     private CompradorEntity comprador;
 
     @OneToOne(mappedBy = "bono", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
     private ArbolEntity arbol;
 }

@@ -1,6 +1,8 @@
 package com.plantavida.plantavida.persistence.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,12 +17,15 @@ import java.util.List;
 public class UserEntity {
     @Id
     @Column(nullable = false, length = 20)
+    @NotBlank(message = "El nombre de usuario es obligatorio")
     private String username;
 
     @Column(nullable = false, length = 200)
+    @NotBlank(message = "La contraseña es obligatoria")
     private String password;
 
-    @Column(length = 50)
+    @Column(nullable = false, unique = true, length = 50)
+    @Email(message = "El correo debe tener un formato válido")
     private String email;
 
     @Column(nullable = false, columnDefinition = "TINYINT")

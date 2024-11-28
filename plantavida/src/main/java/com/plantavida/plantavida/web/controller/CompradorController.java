@@ -2,9 +2,8 @@ package com.plantavida.plantavida.web.controller;
 
 import com.plantavida.plantavida.persistence.entity.CompradorEntity;
 import com.plantavida.plantavida.service.CompradorService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,9 +17,13 @@ public class CompradorController {
     private final CompradorService compradorService;
 
     @PostMapping
-    public ResponseEntity<CompradorEntity> createComprador(@RequestBody CompradorEntity comprador) {
-        CompradorEntity createdComprador = compradorService.createComprador(comprador);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdComprador);
+    public ResponseEntity<String> createComprador(@Valid @RequestBody CompradorEntity comprador) {
+        try {
+            CompradorEntity createdComprador = compradorService.createComprador(comprador);
+            return ResponseEntity.status(201).body(String.valueOf(createdComprador));
+        } catch (IllegalArgumentException ex) {
+            return ResponseEntity.badRequest().body(ex.getMessage()); // Respuesta 400 en caso de error
+        }
     }
 
     @GetMapping

@@ -1,6 +1,7 @@
 package com.plantavida.plantavida.persistence.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,10 +17,12 @@ import java.time.LocalDateTime;
 public class UserRoleEntity {
     @Id
     @Column(nullable = false, length = 20)
+    @NotBlank(message = "El nombre de usuario es obligatorio")
     private String username;
 
     @Id
     @Column(nullable = false, length = 20)
+    @NotBlank(message = "El rol es obligatorio")
     private String role;
 
     @Column(name = "granted_date", nullable = false, columnDefinition = "DATETIME")
